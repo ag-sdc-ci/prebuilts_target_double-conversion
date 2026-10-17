@@ -1,0 +1,34 @@
+// Auto-generated prebuilt APEX Blueprint for external/double-conversion
+// Staged from Extractive APEX package: ext-double-conversion (org.blisslabs.ag.ext.double-conversion)
+
+package {
+    default_applicable_licenses: ["external_double_conversion_license"],
+}
+
+license {
+    name: "external_double_conversion_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-BSD-3-Clause",
+    ],
+    license_text: [
+        "LICENSE",
+    ],
+}
+
+cc_prebuilt_library_static {
+    name: "libdoubleconversion",
+    export_include_dirs: [
+        "include",
+        "include/double-conversion",
+    ],
+    srcs: ["lib/libdoubleconversion.a"],
+    sdk_version: "current",
+    min_sdk_version: "30",
+    stl: "libc++_static",
+    visibility: [
+        "//external/tensorflow:__subpackages__",
+        "//visibility:public",
+    ],
+    apex_available: ["com.android.ondevicepersonalization"],
+}
